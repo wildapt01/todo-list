@@ -14,7 +14,7 @@ root.geometry("300x600")
 tasks = []
 
 # Mock list for tasks
-tasks = ["Call Mom", "Buy some bread", "Clean the kitchen"]
+tasks = ["Call Mom", "Buy some bread", "Clean the kitchen", "Eat Lunch"]
 
 
 # Functions
@@ -34,7 +34,9 @@ def add_task():
 
 
 def delete_all():
-    pass
+    global tasks
+    tasks = []
+    update_listbox()
 
 
 def delete_one():
@@ -42,19 +44,25 @@ def delete_one():
 
 
 def sort_asc():
-    pass
+    tasks.sort()
+    update_listbox()
 
 
 def sort_desc():
-    pass
+    tasks.sort()
+    tasks.reverse()
+    update_listbox()
 
 
 def choose_random():
-    pass
+    task = random.choice(tasks)
+    lbl_display["text"] = task
 
 
 def number_of_tasks():
-    pass
+    number_of_tasks = len(tasks)
+    msg = "Number of tasks: %s" % number_of_tasks
+    lbl_display["text"] = msg
 
 
 # Window elements
