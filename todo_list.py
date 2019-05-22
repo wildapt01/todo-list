@@ -34,8 +34,7 @@ def add_task():
 
 
 def delete_all():
-    global tasks
-    tasks = []
+    tasks.clear()
     update_listbox()
 
 
