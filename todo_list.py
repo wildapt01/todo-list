@@ -7,11 +7,30 @@ import random
 # Root window
 root = tkinter.Tk()
 
+root.title("Great To Do List")
+root.geometry("300x600")
+
+# Empty list
+tasks = []
+
+# Mock list for tasks
+tasks = ["Call Mom", "Buy some bread", "Clean the kitchen"]
+
+
 # Functions
+
+def update_listbox():
+    clear_listbox()
+    for task in tasks:
+        lb_tasks.insert("end", task)
+
+
+def clear_listbox():
+    lb_tasks.delete(0, "end")
 
 
 def add_task():
-    pass
+    update_listbox()
 
 
 def delete_all():
